@@ -1,6 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpRequest, HttpResponse
-
 # Create your views here.
 
 def home(request):
@@ -8,3 +6,6 @@ def home(request):
 
 def room(request):
     return render(request, 'room.html')
+
+def about(request):
+    return render(request, 'about.html')
