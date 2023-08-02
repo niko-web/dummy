@@ -2,4 +2,12 @@
 
 {% block content %}
 <h1> home template</h1>
+
+<div class="data">
+    {% for person in rooms %}
+        <div class="content", id="{{person.id}}">
+            {{rooms}}
+        </div>
+    {% endfor %}
+</div>
 {% endblock content %}
