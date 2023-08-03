@@ -3,28 +3,26 @@ from django.shortcuts import render
 
 rooms = [
     {
-        'id':1, 
-        'name': "Nikolay",
-
+        'id': 1,
+        'name': 'Nikolay',
     },
     {
-        'id':2, 
-        'name': "georgi",
-
+        'id': 2,
+        'name': 'peter',
     },
     {
-        'id':3, 
-        'name': "Petar",
-
+        'id': 3,
+        'name': 'Ivan'
     },
-
 ]
 
+
 def home(request):
-    return render(request, 'home.html', {'rooms': rooms})
+    return render(request, 'base/home.html')
 
 def room(request):
-    return render(request, 'room.html')
+    context = {'rooms': rooms}
+    return render(request, 'base/room.html', context)
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'base/about.html')
