@@ -1,28 +1,21 @@
 from django.shortcuts import render
+from django.contrib.auth.models import User
+
+
 # Create your views here.
 
-rooms = [
-    {
-        'id': 1,
-        'name': 'Nikolay',
-    },
-    {
-        'id': 2,
-        'name': 'peter',
-    },
-    {
-        'id': 3,
-        'name': 'Ivan'
-    },
-]
 
 
 def home(request):
-    return render(request, 'base/home.html')
+    users = User.objects.all()
+    context = {
+        'users': users
+    }
+    return render(request, 'base/home.html', context)
+
 
 def room(request):
-    context = {'rooms': rooms}
-    return render(request, 'base/room.html', context)
+    return render(request, 'base/room.html')
 
 def about(request):
     return render(request, 'base/about.html')

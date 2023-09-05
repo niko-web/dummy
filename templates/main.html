@@ -11,7 +11,11 @@
 <body>
     {% include 'navbar.html' %}
     {% block content %}
-
+        <div class="users">
+            {% for user in users %}
+               
+            {% endfor %}
+        </div>
     {% endblock %}
     {% include 'footer.html' %}
 </body>
