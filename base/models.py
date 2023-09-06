@@ -4,7 +4,9 @@ from django.db import models
 class User(models.Model):
     username = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
-    age = models.IntegerField(max_length=3)
+    age = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return self.username
@@ -16,6 +18,9 @@ class Car(models.Model):
     model = models.CharField(max_length=255)
     color = models.CharField(max_length=255)
     engine = models.CharField(max_length=255)
+    year = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     user = models.OneToOneField(
         User,
@@ -24,7 +29,7 @@ class Car(models.Model):
     )
 
     def __str__(self):
-        return self.brand   
+        return self.brand  + '' + self.model
     
 
 
