@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class User(models.Model):
+class SiteUser(models.Model):
     username = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
     age = models.IntegerField()
@@ -14,7 +14,7 @@ class User(models.Model):
 
 
 class Car(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(SiteUser, on_delete=models.CASCADE)
     brand = models.CharField(max_length=255)
     model = models.CharField(max_length=255)
     color = models.CharField(max_length=255)
