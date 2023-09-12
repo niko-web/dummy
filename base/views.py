@@ -2,7 +2,6 @@
 
 from django.shortcuts import render
 from .models import SiteUser
-# from django.contrib.auth.models import User
 
 def home(request):
     users = SiteUser.objects.all()
