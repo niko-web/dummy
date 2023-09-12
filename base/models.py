@@ -14,8 +14,6 @@ class ApplicationConfig(models.Model):
 class SiteUser(AbstractUser):
     email = models.EmailField(max_length=254)
     age = models.IntegerField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return self.username

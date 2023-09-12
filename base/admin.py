@@ -11,7 +11,7 @@ class CarAdmin(admin.ModelAdmin):
     list_display = ["id", "brand", "model", "color", "year", "created_at", "updated_at"]
 
 class SiteUserAdmin(admin.ModelAdmin):
-    list_display = ["id", "username", "email", "age", "is_superuser", "created_at", "updated_at"]
+    list_display = ["id", "username", "email", "age", "is_superuser", "date_joined"]
 
 
 admin.site.register(SiteUser, SiteUserAdmin)
