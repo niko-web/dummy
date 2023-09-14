@@ -1,6 +1,7 @@
 # Create your views here.
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import SiteUser
 
 def home(request):
@@ -21,5 +22,15 @@ def about(request):
 
 
 def loginPage(request):
-    context = {}
-    return render(request, 'base/login_register.html', context)
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        try:
+            user = SiteUser.objects.get(username=username)
+        except:
+            messages.error(request, 'User does not exist' )
+
+
+    # context = {}
+    return render(request, 'base/login_register.html')
