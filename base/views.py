@@ -11,10 +11,15 @@ def home(request):
     }
     
     return render(request, 'base/home.html', context)
-
+  
 
 def room(request):
     return render(request, 'base/room.html')
 
 def about(request):
     return render(request, 'base/about.html')
+
+
+def loginPage(request):
+    context = {}
+    return render(request, 'base/login_register.html', context)
