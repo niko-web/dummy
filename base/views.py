@@ -3,6 +3,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import SiteUser
+from django.contrib.auth import authenticate, login, logout
 
 def home(request):
     users = SiteUser.objects.all()
@@ -30,6 +31,14 @@ def loginPage(request):
             user = SiteUser.objects.get(username=username)
         except:
             messages.error(request, 'User does not exist' )
+        
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect("room")
+        else:
+            messages.error(request, "username or password doesnt exist")
 
 
     # context = {}
