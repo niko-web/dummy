@@ -41,5 +41,5 @@ def loginPage(request):
             messages.error(request, "username or password doesnt exist")
 
 
-    # context = {}
+    
     return render(request, 'base/login_register.html')
