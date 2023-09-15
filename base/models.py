@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.base_user import BaseUserManager
+from .base import CustomUserManager
 
 # Create your models here.
 
@@ -12,6 +14,8 @@ class ApplicationConfig(models.Model):
         abstract = True
 
 class SiteUser(AbstractUser):
+    
+    objects = CustomUserManager()
     email = models.EmailField(max_length=254)
     age = models.IntegerField(null=True, blank=True)
     
