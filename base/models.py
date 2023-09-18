@@ -1,12 +1,11 @@
 from django.db import models
-from django.utils import timezone
+# from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
-from django.contrib.auth.base_user import BaseUserManager
 from .base import CustomUserManager
 
 # Create your models here.
 
-class ApplicationConfig(models.Model):
+class ApplicationBaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -24,7 +23,7 @@ class SiteUser(AbstractUser):
 
 
 
-class Car(ApplicationConfig):
+class Car(ApplicationBaseModel):
     user = models.ForeignKey(SiteUser, on_delete=models.CASCADE)
     brand = models.CharField(max_length=255)
     model = models.CharField(max_length=255)
