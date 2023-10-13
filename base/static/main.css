@@ -4,3 +4,22 @@
 .carousel-inner{
     height:500px;
 }
+.carousel-inner img{
+    width: 100%;
+}
+
+.title{
+    border-bottom: 0.3rem solid rgb(56, 55, 55);
+}
+.title h1{
+    font-size: 35px;
+    margin-top: 20px;
+    font-family: "Arial Black", sans-serif;
+    font-size: 4.5em;
+    letter-spacing: -1px;
+    color: rgb(10, 1, 1);
+}
+.title p{
+    font-size:20px;
+}
+
