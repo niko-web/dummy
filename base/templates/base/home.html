@@ -1,8 +1,41 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<h1> home template</h1>
-{%for u in users%}
-    <p>{{u.email}}</p>
-{% endfor %}
+    <div class="container-fluid">
+        <div class="row">  
+            <div id="carCarousel" class="carousel slide" data-bs-ride="carousel"">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1462396881884-de2c07cb95ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2400&q=80" class="d-block w-100" alt="Car 1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Car 1</h5>
+                            <p>Description of Car 1</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" class="d-block w-100" alt="Car 2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Car 2</h5>
+                            <p>Description of Car 2</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" class="d-block w-100" alt="Car 3">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Car 3</h5>
+                            <p>Description of Car 3</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
 {% endblock content %}  
